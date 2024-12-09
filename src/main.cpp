@@ -4,7 +4,7 @@
 #include <vector>
 #include "include/feature_extraction.h"
 #include "include/feature_matching.h"
-
+#include "include/pose_estimation.h"
 int main() {
     std::cout << "Hello, World!" << std::endl;
 
@@ -37,6 +37,10 @@ int main() {
         // Feature matching
         std::vector<cv::DMatch> matches;
         matchFeatures(descriptors1, descriptors2, keypoints1, keypoints2, matches, img1, img2, output_path);  
+        cv::Mat R, t;
+            cv::Mat K = (cv::Mat_<double>(3, 3) << 520.9, 0, 325.1, 0, 521.0, 249.7, 0, 0, 1);
+        estimatePose(keypoints1, keypoints2, matches,K, R, t);
+
       }
 
     std::cout << "Feature extraction completed!" << std::endl;

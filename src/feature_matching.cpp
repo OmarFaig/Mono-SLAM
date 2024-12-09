@@ -20,7 +20,7 @@ void matchFeatures(const cv::Mat &descriptors1, const cv::Mat &descriptors2,
                     cv::Scalar(255, 0, 0), std::vector<char>(), cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
 
     // Save the image with matches
-    cv::imwrite(output_filename, imgMatches);
+    //cv::imwrite(output_filename, imgMatches);
 
    // cv::imshow("Feature Mathces", imgMatches);
     cv::waitKey(0);
