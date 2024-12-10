@@ -15,13 +15,13 @@ void matchFeatures(const cv::Mat &descriptors1, const cv::Mat &descriptors2,
               [](const cv::DMatch &a, const cv::DMatch &b)
               { return a.distance < b.distance; });
 
-    cv::Mat imgMatches;
-    cv::drawMatches(img1, keypoints1, img2, keypoints2, matches, imgMatches, cv::Scalar(0, 255, 0),
-                    cv::Scalar(255, 0, 0), std::vector<char>(), cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
+   // cv::Mat imgMatches;
+    //cv::drawMatches(img1, keypoints1, img2, keypoints2, matches, imgMatches, cv::Scalar(0, 255, 0),
+                   // cv::Scalar(255, 0, 0), std::vector<char>(), cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
 
     // Save the image with matches
     //cv::imwrite(output_filename, imgMatches);
 
    // cv::imshow("Feature Mathces", imgMatches);
-    cv::waitKey(0);
+   // cv::waitKey(0);
 }
