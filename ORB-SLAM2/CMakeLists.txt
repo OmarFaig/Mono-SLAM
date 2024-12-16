@@ -8,6 +8,8 @@ find_package(OpenCV REQUIRED)
 
 message( STATUS "Found Pangolin version ${Pangolin_VERSION}" )
 message( STATUS "Found OpenCV version ${OpenCV_VERSION}" )
-include_directories(${OpenCV_INCLUDE_DIRS} )
-add_executable(run src/main.cpp )
-target_link_libraries(run ${OpenCV_LIBS} )
+include_directories(${OpenCV_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR}/include)
+add_executable(run 
+    src/main.cpp
+    src/Visualization.cpp )
+target_link_libraries(run ${OpenCV_LIBS} ${Pangolin_LIBRARIES} )
